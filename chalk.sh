@@ -5,7 +5,7 @@ set -e
 while [ 1 ]; do
   REPLY=""
   WORD=""
-  IFS=''
+  IFS=""
   while [[ "$REPLY" != $'\x0a' && "$REPLY" != $'\x20' ]]; do
     read -r -d'' -s -n1
     letter=$REPLY
@@ -15,6 +15,6 @@ while [ 1 ]; do
   done
 
   if [ -n $WORD ]; then
-    say $WORD
+    say $WORD &
   fi
 done
