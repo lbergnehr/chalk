@@ -8,10 +8,10 @@ while [ 1 ]; do
   IFS=""
   while [[ "$REPLY" != $'\x0a' && "$REPLY" != $'\x20' ]]; do
     read -r -d'' -s -n1
-    letter=$REPLY
+    LETTER=$REPLY
 
-    say $letter &
-    WORD="$WORD$letter"
+    say $LETTER &
+    WORD="$WORD$LETTER"
   done
 
   if [ -n $WORD ]; then
